@@ -6,3 +6,5 @@ export const INTERVAL_OPTIONS_SELECTOR = [
   { value: '5', label: '5 minutos' },
   { value: '15', label: '15 minutos' },
 ];
+
+export const TIME_UNIT = 'min';
