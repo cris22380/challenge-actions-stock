@@ -35,7 +35,7 @@ const StockDetail: FC<{
   return (
     <>
       {queryError && <ErrorModal onClick={() => setQueryError(undefined)} error={queryError} />}
-      <div className="p-8 min-h-screen w-3/4 flex flex-col z-0">
+      <div className="p-8 min-h-screen w-full 2xl:w-3/4 flex flex-col z-0">
         <SmallButton onClick={() => onShowDetail(false)}>X</SmallButton>
         {stockDetail && <Header stock={stockDetail} />}
         <InputGroup

@@ -9,7 +9,7 @@ interface IDate {
 const Datepicker: FC<IDate> = ({ date, disable, label, onDateChange }): ReactNode => {
   return (
     <div className="flex items-center my-2">
-      <label className="ml-8">{label}</label>
+      <label className="ml-4 2xl:ml-8">{label}</label>
       <input
         type="datetime-local"
         className="bg-slate-100 text-slate-700 rounded-md p-1 text-base ml-2"

@@ -40,7 +40,7 @@ const InputGroup: FC<IInputGroup> = ({
 }) => {
   return (
     <div className="flex flex-col w-full mx-auto items-star text-slate-700 text-xl justify-center items-center mt-12">
-      <div className="flex w-full px-8 mx-auto items-star text-slate-700 text-xl justify-center items-center">
+      <div className="flex w-full 2xl:px-8 mx-auto items-star text-slate-700 text-xl justify-center items-center">
         <div className="flex flex-row text-slate-700 text-xl items-center w-1/2  gap-10">
           <Checkbox isChecked={realTime} onChange={onSetRealTime} label="Tiempo Real" />
           <Select

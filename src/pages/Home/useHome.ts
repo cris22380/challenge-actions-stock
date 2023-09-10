@@ -33,7 +33,6 @@ export const useHome = (): IUseHome => {
       toogleIsLoading(() => true);
       fetchStocks()
         .then((stocks) => {
-          console.log(stocks)
           toogleIsLoading(false);
           setStocks(() => stocks);
         })
