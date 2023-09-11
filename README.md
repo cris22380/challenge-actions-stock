@@ -74,20 +74,14 @@ Podes consultar los valores soportados en https://twelvedata.com/docs#earliest-t
 
 Supports: 1min, 5min, 15min, 30min, 45min, 1h, 2h, 4h, 1day, 1week, 1month
 
-Para modificar la unidad de tiempo debes cambiar
-
-```
-export const TIME_UNIT = 'min';
-```
-
 Abre el archivo constants.ts ubicado en la carpeta utils de tu proyecto.
 
 Busca la constante llamada INTERVAL_OPTIONS_SELECTOR. Debería verse algo como esto:
 
 ```
 export const INTERVAL_OPTIONS_SELECTOR = [
-  { value: '1', label: '1 minutos' },
-  { value: '5', label: '5 minutos' },
+  { value: '1min', label: '1 minutos' },
+  { value: '5min', label: '5 minutos' },
   // Otras opciones de intervalo aquí
 ];
 ```

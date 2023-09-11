@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import * as Highcharts from 'highcharts';
 import { IErrorQuery, IStock } from '../../types';
 import { fetchStocksByInterval } from '../../service/fetchStockByInterval';
-import { getChartOptions } from '../../utils';
-
+import { getChartOptions, parseInterval } from '../../utils';
 export interface IUseStockDetail {
   actionError: boolean;
   chartOptions: Highcharts.Options | null;
@@ -42,7 +41,7 @@ export const useStockDetail = (stockDetail: IStock) => {
   const [initIntervalQuery, setInitIntervaQuery] = useState<boolean>(false);
 
   useEffect(() => {
-    const intervaValue = parseInt(interval) * 10000;
+    const intervalValue = parseInterval(interval);
     const intervalId = setInterval(() => {
       if (initIntervalQuery && stockDetail && realTime && interval) {
         fetchStocksByInterval(stockDetail.symbol, interval).then((data) => {
@@ -51,7 +50,7 @@ export const useStockDetail = (stockDetail: IStock) => {
             : setChartOptions(getChartOptions(data));
         });
       }
-    }, intervaValue);
+    }, intervalValue);
 
     return () => {
       clearInterval(intervalId);
