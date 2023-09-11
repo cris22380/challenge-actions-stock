@@ -9,6 +9,7 @@ interface IHandlerHome extends IUseHome {
   handlePagination: (stockList: IStock[]) => IStock[];
   handleSearch: (value: string, key: FilterKeyEnum) => void;
   handleStockDetail: (stock: IStock) => void;
+  handleCloseDetail: () => void;
 }
 
 export const HandleHome = (): IHandlerHome => {
@@ -46,6 +47,11 @@ export const HandleHome = (): IHandlerHome => {
     toogleShowDetail(true);
   };
 
+  const handleCloseDetail = () => {
+    toogleShowDetail(false);
+    setStocksFiltered(undefined)
+  }
+
   const totalPages = calculateTotalPages(stocks);
   const totalFilteredPages = calculateTotalPages(stocksSearch);
 
@@ -59,6 +65,7 @@ export const HandleHome = (): IHandlerHome => {
     stocksSearch,
     totalPages,
     totalFilteredPages,
+    handleCloseDetail,
     handlePagination,
     handleSearch,
     handleStockDetail,

@@ -38,7 +38,7 @@ export const useHome = (): IUseHome => {
         })
         .catch((error) => {
           toogleIsLoading(false);
-          setError({ message: error.message, code: error.code});
+          setError({ message: error.message, code: error.code });
         });
     }
   }, [stocks]);

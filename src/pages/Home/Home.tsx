@@ -16,18 +16,18 @@ function Home() {
     stocksSearch,
     totalPages,
     totalFilteredPages,
+    handleCloseDetail,
     handlePagination,
     handleSearch,
     handleStockDetail,
     setCurrentPage,
     setError,
-    toogleShowDetail,
   } = HandleHome();
 
   return (
     <div className="flex flex-col items-center bg-slate-300 min-h-screen">
       {stockDetail && showDetail ? (
-        <StockDetail stockDetail={stockDetail} onShowDetail={toogleShowDetail} />
+        <StockDetail stockDetail={stockDetail} onShowDetail={handleCloseDetail} />
       ) : (
         <div className="p-10 flex flex-col items-center w-3/4">
           {isLoading ? (
