@@ -53,7 +53,7 @@ export const parseInterval = (interval: string): number => {
     ? 60480000
     : /month/.test(interval)
     ? 259200000
-    : (/h/.test(interval) && 3600000) || 1;
+    : (/h/.test(interval) && 3600000) || 60000;
 
   const number = interval.replace(/[^0-9]+/g, '');
   return parseInt(number) * milliseconds;
