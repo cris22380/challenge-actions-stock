@@ -44,6 +44,10 @@ export const formatDate = (date: string): string => {
   return `${date.replace('T', '%20')}:00`;
 };
 
+export const getActualDate = (): string => {
+  return new Date().toISOString().replace(/T.*/g, '');
+} 
+
 export const parseInterval = (interval: string): number => {
   const milliseconds = (/min/.test(interval) && 60000) || 90000;
 
