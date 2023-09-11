@@ -45,15 +45,7 @@ export const formatDate = (date: string): string => {
 };
 
 export const parseInterval = (interval: string): number => {
-  const milliseconds = /min/.test(interval)
-    ? 60000
-    : /day/.test(interval)
-    ? 8640000
-    : /week/.test(interval)
-    ? 60480000
-    : /month/.test(interval)
-    ? 259200000
-    : (/h/.test(interval) && 3600000) || 60000;
+  const milliseconds = (/min/.test(interval) && 60000) || 90000;
 
   const number = interval.replace(/[^0-9]+/g, '');
   return parseInt(number) * milliseconds;
