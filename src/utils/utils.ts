@@ -6,7 +6,7 @@ export const filterStockList = (
   value: string,
   key: FilterKeyEnum
 ): IStock[] | undefined => {
-  const val = new RegExp(value);
+  const val = new RegExp(value.toLowerCase());
   return list.filter((stock) => val.test(stock[key].toLowerCase()));
 };
 
